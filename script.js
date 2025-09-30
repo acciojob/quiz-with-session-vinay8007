@@ -90,14 +90,16 @@ function calculateScore() {
   localStorage.setItem("score", score);
 }
 
-// // Event Listener for Submit
-// submitBtn.addEventListener("click", calculateScore);
+// Event Listener for Submit
+submitBtn.addEventListener("click", calculateScore);
 
-// // Render questions on load
-// renderQuestions();
+// Render questions on load
+renderQuestions();
 
 // Show stored score if available
 const savedScore = localStorage.getItem("score");
 if (savedScore !== null) {
   scoreElement.textContent = `Your score is ${savedScore} out of ${questions.length}`;
+} else {
+  scoreElement.textContent = ""; // keep empty at start
 }
